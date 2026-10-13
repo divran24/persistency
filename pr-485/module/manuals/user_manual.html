@@ -491,7 +491,7 @@
                   
   <section id="persistency-user-manual">
 <span id="id1"></span><h1>Persistency User Manual<a class="headerlink" href="#persistency-user-manual" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-891672e7">
+<div class="need_container docutils container" id="SNCB-d1206baa">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__persistency_user_manual">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -558,140 +558,7 @@ application developers. It refers to the sources of the information instead of r
 <section id="module-configuration-details">
 <h1>Module Configuration Details<a class="headerlink" href="#module-configuration-details" title="Link to this heading">#</a></h1>
 <p>A KVS instance is configured via <code class="docutils literal notranslate"><span class="pre">KvsBuilder</span></code> (C++ and Rust), see <a class="reference internal" href="#api-reference">API Reference</a>. The behavior of the
-component, including its configuration, is specified by the component requirements:</p>
-<div class="needstable_wrapper docutils container" id="needtable-module/manuals/user_manual-0">
-<div class="pst-scrollable-table-container"><table class="NEEDS_TABLE table" id="needtable-module/manuals/user_manual-0-table_node">
-<colgroup>
-<col style="width: 60.0%" />
-<col style="width: 40.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Title</p></th>
-<th class="head"><p>ID</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="need row-even"><td class="needs_title"><p>Async API</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__async_api">comp_req__kvs__async_api</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Callback Support</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__callback_support">comp_req__kvs__callback_support</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Concurrency</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__concurrency">comp_req__kvs__concurrency</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Constraint Configuration</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__constraints">comp_req__kvs__constraints</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Default Value Checksum</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__default_val_chksum">comp_req__kvs__default_val_chksum</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Default Value Config</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__default_value_cfg">comp_req__kvs__default_value_cfg</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Default Value Query</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__default_value_query">comp_req__kvs__default_value_query</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Default Value Datatypes</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__default_value_types">comp_req__kvs__default_value_types</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Engineering Mode</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__eng_mode">comp_req__kvs__eng_mode</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Explicit Snapshot Operations</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__explicit_snapshot_operations">comp_req__kvs__explicit_snapshot_operations</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Field Mode</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__field_mode">comp_req__kvs__field_mode</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Key Encoding</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__key_encoding">comp_req__kvs__key_encoding</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Key Length</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__key_length">comp_req__kvs__key_length</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Key Naming</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__key_naming">comp_req__kvs__key_naming</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Key Uniqueness</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__key_uniqueness">comp_req__kvs__key_uniqueness</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Multi-Instance</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__multi_instance">comp_req__kvs__multi_instance</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Permission Control</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__permission_control">comp_req__kvs__permission_control</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Permission Error Handling</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__permission_err_hndl">comp_req__kvs__permission_err_hndl</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Persistent Data Storage Checksum Write</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_csum">comp_req__kvs__pers_data_csum</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Persistent Data Storage Checksum Verify</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_csum_vrfy">comp_req__kvs__pers_data_csum_vrfy</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Persistent Data Schema</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_schema">comp_req__kvs__pers_data_schema</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Persistent Data Storage Backend</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_store_bnd">comp_req__kvs__pers_data_store_bnd</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Persistent Data Storage Format</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_store_fmt">comp_req__kvs__pers_data_store_fmt</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Persistent Data Versioning</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__pers_data_version">comp_req__kvs__pers_data_version</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Persistent Data Storage Components</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__persist_data_com">comp_req__kvs__persist_data_com</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Snapshot Create</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_create">comp_req__kvs__snapshot_create</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Snapshot Create API</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_create_api">comp_req__kvs__snapshot_create_api</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Snapshot Slot Indexing</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_id_api">comp_req__kvs__snapshot_id_api</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Maximum Number of Snapshots</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_max_num_cfg">comp_req__kvs__snapshot_max_num_cfg</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Snapshot Overwrite</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_overwrite">comp_req__kvs__snapshot_overwrite</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Snapshot Remove API</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_remove_api">comp_req__kvs__snapshot_remove_api</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Snapshot Restore API</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_restore_api">comp_req__kvs__snapshot_restore_api</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Snapshot Slot Free Query API</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_slot_free_api">comp_req__kvs__snapshot_slot_free_api</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Snapshot Data Source</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__snapshot_source">comp_req__kvs__snapshot_source</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Value Data Types</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__value_data_types">comp_req__kvs__value_data_types</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Value Default</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__value_default">comp_req__kvs__value_default</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Value Length</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__value_length">comp_req__kvs__value_length</a></p></td>
-</tr>
-<tr class="need row-odd"><td class="needs_title"><p>Value Reset</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__value_reset">comp_req__kvs__value_reset</a></p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Value Serialization</p></td>
-<td class="needs_id"><p><a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__value_serialize">comp_req__kvs__value_serialize</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+component, including its configuration, is specified in <a class="reference internal" href="../../components/kvs/requirements/index.html#doc__kvs_requirements" title="doc__kvs_requirements"><em class="xref need">KVS Requirements (doc__kvs_requirements)</em></a>.</p>
 <section id="configuration-effects">
 <h2>Configuration Effects<a class="headerlink" href="#configuration-effects" title="Link to this heading">#</a></h2>
 <p>Loading, flushing and snapshot handling are shown in the dynamic architecture of
@@ -718,26 +585,8 @@ verification results are documented in <a class="reference internal" href="../..
 <h1>Integration Guidelines<a class="headerlink" href="#integration-guidelines" title="Link to this heading">#</a></h1>
 <p>The Bazel integration is described in
 <a class="reference external" href="https://github.com/eclipse-score/persistency/blob/main/examples/README.md">examples/README.md</a>.
-The application shall fulfill the assumptions of use:</p>
-<div class="needstable_wrapper docutils container" id="needtable-module/manuals/user_manual-1">
-<div class="pst-scrollable-table-container"><table class="NEEDS_TABLE table" id="needtable-module/manuals/user_manual-1-table_node">
-<colgroup>
-<col style="width: 60.0%" />
-<col style="width: 40.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Title</p></th>
-<th class="head"><p>ID</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="need row-even"><td class="needs_title"><p>Persistency Error handling</p></td>
-<td class="needs_id"><p><a class="reference internal" href="safety_manual.html#aou_req__persistency__error_handling">aou_req__persistency__error_handling</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+The application shall fulfill the assumptions of use listed in <a class="reference internal" href="safety_manual.html#doc__persistency_safety_manual" title="doc__persistency_safety_manual"><em class="xref need">Persistency Safety Manual (doc__persistency_safety_manual)</em></a> and
+<a class="reference internal" href="security_manual.html#doc__persistency_security_manual" title="doc__persistency_security_manual"><em class="xref need">Persistency Security Manual (doc__persistency_security_manual)</em></a>.</p>
 </section>
 <section id="version-history-compatibility-and-troubleshooting">
 <h1>Version History, Compatibility, and Troubleshooting<a class="headerlink" href="#version-history-compatibility-and-troubleshooting" title="Link to this heading">#</a></h1>
