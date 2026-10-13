@@ -28,10 +28,20 @@
 #include <unordered_map>
 #include <vector>
 
-#define KVS_MAX_SNAPSHOTS 3
-
 namespace score::mw::per::kvs
 {
+
+/* comp_req__kvs__key_length: Maximum allowed key length in bytes. */
+constexpr std::size_t KVS_MAX_KEY_LENGTH_BYTES = 32U;
+
+/* comp_req__kvs__snapshot_max_num_cfg: the configurable maximum number of snapshots is
+   limited to the range 0..KVS_MAX_SNAPSHOTS_UPPER_BOUND. A value of 0 disables snapshot
+   operations. */
+constexpr std::size_t KVS_MAX_SNAPSHOTS_UPPER_BOUND = 3U;
+
+/* comp_req__kvs__snapshot_max_num_cfg: default maximum number of snapshots. It can be
+   overridden per instance at init-time via KvsBuilder::snapshot_max_count(). */
+constexpr std::size_t KVS_DEFAULT_MAX_SNAPSHOTS = 3U;
 
 struct InstanceId
 {
@@ -168,6 +178,12 @@ class Kvs final
      *                 - OpenNeedKvs::Optional: An empty KVS will be used if no KVS exists.
      * @param dir The directory path where the KVS files are located. It is passed as an rvalue
      * reference to avoid unnecessary copying. Use "" or "." for the current directory.
+     * @param max_storage_bytes Optional maximum total storage size in bytes. Pass std::nullopt
+     *                          to enforce no storage limit.
+     * @param snapshot_max_count The maximum number of snapshots this instance maintains.
+     *                           Values above KVS_MAX_SNAPSHOTS_UPPER_BOUND are clamped to it
+     *                           (a warning is logged). A value of 0 disables snapshot
+     *                           operations; the current KVS data is still persisted by flush().
      * @return A Result object containing either:
      *         - A Kvs object if the operation is successful.
      *         - An ErrorCode if an error occurs during the operation.
@@ -180,7 +196,9 @@ class Kvs final
                                    const SnapshotId& snapshot_id,
                                    const OpenNeedDefaults& need_defaults,
                                    const OpenNeedKvs& need_kvs,
-                                   const std::string&& dir);
+                                   const std::string&& dir,
+                                   const std::optional<size_t>& max_storage_bytes,
+                                   std::size_t snapshot_max_count);
 
     /**
      * @brief Resets a key-value-storage to its initial state
@@ -270,13 +288,18 @@ class Kvs final
     /**
      * @brief Stores a key-value pair in the key-value store.
      *
+     * Features:
+     *   - comp_req__kvs__key_length: The key length is limited to
+     *     KVS_MAX_KEY_LENGTH_BYTES (32) bytes.
+     *
      * @param key The key associated with the value to be stored.
      *            It is represented as a string view to avoid unnecessary copying.
      * @param value The value to be stored, represented as a KvsValue object.
      *
      * @return A score::Result object that indicates the success or failure of the operation.
      *         - On success: Returns a blank score::Result.
-     *         - On failure: Returns an ErrorCode describing the error.
+     *         - On failure: Returns ErrorCode::KeyTooLong if the key exceeds
+     *           KVS_MAX_KEY_LENGTH_BYTES, or another ErrorCode describing the error.
      */
     score::Result<void> set_value(const std::string_view key, const KvsValue& value);
 
@@ -340,7 +363,9 @@ class Kvs final
      * @brief Retrieves the maximum number of snapshots that can be stored.
      *
      * This function returns the upper limit on the number of snapshots
-     * that the key-value store can maintain at any given time.
+     * that the key-value store can maintain at any given time. The limit is
+     * configured per instance via KvsBuilder::snapshot_max_count(), defaults
+     * to KVS_DEFAULT_MAX_SNAPSHOTS and never exceeds KVS_MAX_SNAPSHOTS_UPPER_BOUND.
      *
      * @return The maximum count of snapshots as a size_t value.
      */
@@ -403,6 +428,21 @@ class Kvs final
      */
     score::Result<size_t> get_storage_file_size() const;
 
+    /**
+     * @brief Performs a 'dry run' to check if the current in-memory store would
+     *        exceed the storage limit upon flushing.
+     *
+     * This function serializes the current key-value data to a temporary buffer
+     * and calculates the potential total storage size. It checks this size against
+     * the configured `max_storage_bytes` limit.
+     *
+     * @return A score::Result object containing either:
+     *         - On success: The estimated total size (size_t) that the KVS would occupy after a flush.
+     *         - On failure: An `OutOfStorageSpace` error if the limit would be exceeded,
+     *           or another ErrorCode for other failures (e.g., serialization).
+     */
+    score::Result<size_t> calculate_potential_size();
+
   private:
     /* Private constructor to prevent direct instantiation */
     Kvs();
@@ -417,6 +457,9 @@ class Kvs final
     /* Filename prefix */
     score::filesystem::Path filename_prefix;
 
+    /* comp_req__kvs__snapshot_max_num_cfg: Maximum number of snapshots maintained by this instance */
+    std::size_t max_snapshots;
+
     /* Filesystem handling */
     std::unique_ptr<score::filesystem::Filesystem> filesystem;
 
@@ -427,6 +470,9 @@ class Kvs final
     /* Logging */
     std::unique_ptr<score::mw::log::Logger> logger;
 
+    /* Maximum storage limit in bytes. Unset means no limit is enforced. */
+    std::optional<size_t> max_storage_bytes;
+
     /* Private Methods */
     score::Result<void> snapshot_rotate();
     score::Result<KeyValueMap> parse_json_data(const std::string& data);
@@ -434,6 +480,10 @@ class Kvs final
                                          const OpenJsonNeedFile need_file);
     score::Result<void> write_json_data(const std::string& buf);
     score::Result<void> write_and_sync(const std::string& path, const void* data, std::size_t size);
+
+    score::Result<std::string> serialize_and_check();
+    score::Result<size_t> get_file_size(const score::filesystem::Path& file_path);
+    score::Result<size_t> get_current_storage_size();
 };
 
 } /* namespace score::mw::per::kvs */

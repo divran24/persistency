@@ -14,6 +14,7 @@
 #define SCORE_LIB_KVS_KVSBUILDER_HPP
 
 #include "score/kvs/kvs.hpp"
+#include <optional>
 #include <string>
 
 namespace score::mw::per::kvs
@@ -97,6 +98,30 @@ class KvsBuilder final
     KvsBuilder& dir(std::string&& dir_path);
 
     /**
+     * @brief Configure the maximum storage size for the KVS in bytes.
+     * @param max_storage_bytes The maximum allowed total storage size in bytes. When this
+     *                          option is not used, no storage limit is enforced.
+     * @return Reference to this builder (for chaining).
+     */
+    KvsBuilder& max_storage_bytes(const std::optional<size_t>& max_storage_bytes);
+
+    /**
+     * @brief Specify the maximum number of snapshots the KVS maintains.
+     *
+     * comp_req__kvs__snapshot_max_num_cfg: the maximum number of snapshots is configurable
+     * per instance in the range 0..KVS_MAX_SNAPSHOTS_UPPER_BOUND. When this option is not
+     * used, KVS_DEFAULT_MAX_SNAPSHOTS is applied.
+     *
+     * @param max_count Maximum number of snapshots. Values above
+     *                  KVS_MAX_SNAPSHOTS_UPPER_BOUND are clamped to it when the KVS is built.
+     *                  A value of 0 disables snapshot operations; flush() still persists the
+     *                  current KVS data.
+     *
+     * @return Reference to this builder (for chaining).
+     */
+    KvsBuilder& snapshot_max_count(std::size_t max_count);
+
+    /**
      * @brief Builds and opens the Kvs instance with the configured options.
      *
      * Internally calls Kvs::open() with the selected flags and directory.
@@ -111,6 +136,8 @@ class KvsBuilder final
     OpenNeedDefaults need_defaults;  ///< Whether default values are required
     OpenNeedKvs need_kvs;            ///< Whether an existing KVS is required
     std::string directory;           ///< Directory where to store the KVS Files
+    std::optional<size_t> maximum_storage_bytes;  ///< Maximum total storage size in bytes; unset means no limit
+    std::size_t max_snapshots;                    ///< Maximum number of snapshots to maintain
 };
 
 } /* namespace score::mw::per::kvs */
