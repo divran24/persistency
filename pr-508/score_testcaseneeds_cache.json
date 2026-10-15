@@ -500,7 +500,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__key_encoding, comp_req__kvs__key_length",
+    "PartiallyVerifies": "comp_req__kvs__key_naming, comp_req__kvs__key_encoding, comp_req__kvs__key_length",
     "FullyVerifies": null
   },
   {
@@ -514,7 +514,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "Rust KVS does not validate keys yet",
-    "PartiallyVerifies": "comp_req__kvs__key_encoding, comp_req__kvs__key_length",
+    "PartiallyVerifies": "comp_req__kvs__key_naming, comp_req__kvs__key_encoding, comp_req__kvs__key_length",
     "FullyVerifies": null
   },
   {
@@ -1130,7 +1130,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__key_encoding, comp_req__kvs__key_length",
+    "PartiallyVerifies": "comp_req__kvs__key_naming, comp_req__kvs__key_encoding, comp_req__kvs__key_length",
     "FullyVerifies": null
   },
   {
@@ -1144,7 +1144,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__key_encoding, comp_req__kvs__key_length",
+    "PartiallyVerifies": "comp_req__kvs__key_naming, comp_req__kvs__key_encoding, comp_req__kvs__key_length",
     "FullyVerifies": null
   },
   {
