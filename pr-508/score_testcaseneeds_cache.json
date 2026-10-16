@@ -291,7 +291,7 @@
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
     "PartiallyVerifies": null,
-    "FullyVerifies": "comp_req__kvs__persist_data_com"
+    "FullyVerifies": "comp_req__kvs__explicit_flush"
   },
   {
     "name": "TestSnapshotCountFirstFlush__test_ok[0-rust]",
@@ -304,7 +304,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -318,7 +318,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -332,7 +332,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -346,7 +346,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -360,7 +360,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -374,7 +374,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -430,8 +430,8 @@
     "TestType": "control-flow-analysis",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation, comp_req__kvs__snapshot_rotate",
-    "FullyVerifies": "comp_req__kvs__snapshot_restore"
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api, comp_req__kvs__snapshot_overwrite",
+    "FullyVerifies": "comp_req__kvs__snapshot_restore_api"
   },
   {
     "name": "TestSnapshotRestoreCurrent__test_error[rust]",
@@ -444,7 +444,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -458,7 +458,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation, comp_req__kvs__snapshot_restore",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api, comp_req__kvs__snapshot_restore_api",
     "FullyVerifies": null
   },
   {
@@ -472,7 +472,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -486,7 +486,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -934,7 +934,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -948,7 +948,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -962,7 +962,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -976,7 +976,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -990,7 +990,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -1004,7 +1004,7 @@
     "TestType": "requirements-based",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -1060,8 +1060,8 @@
     "TestType": "control-flow-analysis",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation, comp_req__kvs__snapshot_rotate",
-    "FullyVerifies": "comp_req__kvs__snapshot_restore"
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api, comp_req__kvs__snapshot_overwrite",
+    "FullyVerifies": "comp_req__kvs__snapshot_restore_api"
   },
   {
     "name": "TestSnapshotRestoreCurrent__test_error[cpp]",
@@ -1074,7 +1074,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -1088,7 +1088,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation, comp_req__kvs__snapshot_restore",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api, comp_req__kvs__snapshot_restore_api",
     "FullyVerifies": null
   },
   {
@@ -1102,7 +1102,7 @@
     "TestType": "interface-test",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
@@ -1116,7 +1116,7 @@
     "TestType": "fault-injection",
     "DerivationTechnique": "requirements-analysis",
     "result_text": "",
-    "PartiallyVerifies": "comp_req__kvs__snapshot_creation",
+    "PartiallyVerifies": "comp_req__kvs__snapshot_create_api",
     "FullyVerifies": null
   },
   {
