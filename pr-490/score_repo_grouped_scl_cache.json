@@ -1398,186 +1398,130 @@
         }
       },
       {
+        "need": "comp_req__kvs__key_naming",
+        "links": {
+          "CodeLinks": [],
+          "TestLinks": [
+            {
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[rust]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 77,
+              "need": "comp_req__kvs__key_naming",
+              "verify_type": "partially",
+              "result": "passed",
+              "result_text": ""
+            },
+            {
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[rust]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 87,
+              "need": "comp_req__kvs__key_naming",
+              "verify_type": "partially",
+              "result": "skipped",
+              "result_text": "Rust KVS does not validate keys yet"
+            },
+            {
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[cpp]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 77,
+              "need": "comp_req__kvs__key_naming",
+              "verify_type": "partially",
+              "result": "passed",
+              "result_text": ""
+            },
+            {
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[cpp]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 87,
+              "need": "comp_req__kvs__key_naming",
+              "verify_type": "partially",
+              "result": "passed",
+              "result_text": ""
+            }
+          ]
+        }
+      },
+      {
         "need": "comp_req__kvs__key_encoding",
         "links": {
           "CodeLinks": [],
           "TestLinks": [
             {
-              "name": "TestSupportedDatatypesKeys__test_ok[rust]",
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 44,
+              "line": 77,
               "need": "comp_req__kvs__key_encoding",
               "verify_type": "partially",
               "result": "passed",
               "result_text": ""
             },
             {
-              "name": "TestSupportedDatatypesValues_I32__test_ok[rust]",
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 87,
+              "need": "comp_req__kvs__key_encoding",
+              "verify_type": "partially",
+              "result": "skipped",
+              "result_text": "Rust KVS does not validate keys yet"
+            },
+            {
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[cpp]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 77,
               "need": "comp_req__kvs__key_encoding",
               "verify_type": "partially",
               "result": "passed",
               "result_text": ""
             },
             {
-              "name": "TestSupportedDatatypesValues_U32__test_ok[rust]",
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 87,
               "need": "comp_req__kvs__key_encoding",
+              "verify_type": "partially",
+              "result": "passed",
+              "result_text": ""
+            }
+          ]
+        }
+      },
+      {
+        "need": "comp_req__kvs__key_length",
+        "links": {
+          "CodeLinks": [],
+          "TestLinks": [
+            {
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[rust]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 77,
+              "need": "comp_req__kvs__key_length",
               "verify_type": "partially",
               "result": "passed",
               "result_text": ""
             },
             {
-              "name": "TestSupportedDatatypesValues_I64__test_ok[rust]",
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
+              "line": 87,
+              "need": "comp_req__kvs__key_length",
+              "verify_type": "partially",
+              "result": "skipped",
+              "result_text": "Rust KVS does not validate keys yet"
+            },
+            {
+              "name": "TestSupportedDatatypesKeys__test_valid_keys_accepted[cpp]",
+              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
+              "line": 77,
+              "need": "comp_req__kvs__key_length",
               "verify_type": "partially",
               "result": "passed",
               "result_text": ""
             },
             {
-              "name": "TestSupportedDatatypesValues_U64__test_ok[rust]",
+              "name": "TestSupportedDatatypesKeys__test_invalid_keys_rejected[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_F64__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Bool__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_String__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Array__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Object__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesKeys__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 44,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_I32__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_U32__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_I64__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_U64__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_F64__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Bool__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_String__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Array__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesValues_Object__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__key_encoding",
+              "line": 87,
+              "need": "comp_req__kvs__key_length",
               "verify_type": "partially",
               "result": "passed",
               "result_text": ""
@@ -1591,18 +1535,9 @@
           "CodeLinks": [],
           "TestLinks": [
             {
-              "name": "TestSupportedDatatypesKeys__test_ok[rust]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 44,
-              "need": "comp_req__kvs__value_data_types",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
               "name": "TestSupportedDatatypesValues_I32__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1611,7 +1546,7 @@
             {
               "name": "TestSupportedDatatypesValues_U32__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1620,7 +1555,7 @@
             {
               "name": "TestSupportedDatatypesValues_I64__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1629,7 +1564,7 @@
             {
               "name": "TestSupportedDatatypesValues_U64__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1638,7 +1573,7 @@
             {
               "name": "TestSupportedDatatypesValues_F64__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1647,7 +1582,7 @@
             {
               "name": "TestSupportedDatatypesValues_Bool__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1656,7 +1591,7 @@
             {
               "name": "TestSupportedDatatypesValues_String__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1665,7 +1600,7 @@
             {
               "name": "TestSupportedDatatypesValues_Array__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1674,16 +1609,7 @@
             {
               "name": "TestSupportedDatatypesValues_Object__test_ok[rust]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
-              "need": "comp_req__kvs__value_data_types",
-              "verify_type": "partially",
-              "result": "passed",
-              "result_text": ""
-            },
-            {
-              "name": "TestSupportedDatatypesKeys__test_ok[cpp]",
-              "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 44,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1692,7 +1618,7 @@
             {
               "name": "TestSupportedDatatypesValues_I32__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1701,7 +1627,7 @@
             {
               "name": "TestSupportedDatatypesValues_U32__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1710,7 +1636,7 @@
             {
               "name": "TestSupportedDatatypesValues_I64__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1719,7 +1645,7 @@
             {
               "name": "TestSupportedDatatypesValues_U64__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1728,7 +1654,7 @@
             {
               "name": "TestSupportedDatatypesValues_F64__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1737,7 +1663,7 @@
             {
               "name": "TestSupportedDatatypesValues_Bool__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1746,7 +1672,7 @@
             {
               "name": "TestSupportedDatatypesValues_String__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1755,7 +1681,7 @@
             {
               "name": "TestSupportedDatatypesValues_Array__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
@@ -1764,7 +1690,7 @@
             {
               "name": "TestSupportedDatatypesValues_Object__test_ok[cpp]",
               "file": "score/kvs/tests/test_cases/tests/test_cit_supported_datatypes.py",
-              "line": 85,
+              "line": 136,
               "need": "comp_req__kvs__value_data_types",
               "verify_type": "partially",
               "result": "passed",
