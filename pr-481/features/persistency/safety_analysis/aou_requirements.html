@@ -412,7 +412,7 @@
 <li class="toctree-l1"><a class="reference internal" href="fmea.html">Persistency Failure Modes and Effects Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dfa.html">DFA (Dependent Failure Analysis)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../safety_planning/index.html">Feature Safety Work Products List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security_planning/index.html">Feature Security Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security_planning/index.html">Persistency Security Work Products List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../security_analysis/stride.html">Persistency STRIDE</a></li>
 </ul>
 </div>
@@ -476,7 +476,7 @@
                   
   <section id="persistency-assumptions-of-use">
 <h1>Persistency Assumptions of Use<a class="headerlink" href="#persistency-assumptions-of-use" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-e8d0923e">
+<div class="need_container docutils container" id="SNCB-88852ee9">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__persistency_feat_aou">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -520,10 +520,11 @@
 </table>
 </div>
 </div>
-<p>Assumptions of use of the feature, resulting from <a class="reference internal" href="fmea.html#doc__persistency_fmea" title="doc__persistency_fmea"><em class="xref need">Persistency FMEA (doc__persistency_fmea)</em></a> and <a class="reference internal" href="dfa.html#doc__persistency_dfa" title="doc__persistency_dfa"><em class="xref need">Persistency DFA (doc__persistency_dfa)</em></a>.</p>
+<p>Assumptions of use resulting from <a class="reference internal" href="fmea.html#doc__persistency_fmea" title="doc__persistency_fmea"><em class="xref need">Persistency FMEA (doc__persistency_fmea)</em></a>, <a class="reference internal" href="dfa.html#doc__persistency_dfa" title="doc__persistency_dfa"><em class="xref need">Persistency DFA (doc__persistency_dfa)</em></a>, <a class="reference internal" href="../../../components/kvs/safety_analysis/fmea.html#doc__kvs_fmea" title="doc__kvs_fmea"><em class="xref need">KVS FMEA (doc__kvs_fmea)</em></a>
+and <a class="reference internal" href="../../../components/kvs/safety_analysis/dfa.html#doc__kvs_dfa" title="doc__kvs_dfa"><em class="xref need">KVS DFA (doc__kvs_dfa)</em></a>.</p>
 <section id="aou">
 <h2>AoU<a class="headerlink" href="#aou" title="Link to this heading">#</a></h2>
-<div class="need_container docutils container" id="SNCB-85c2c841">
+<div class="need_container docutils container" id="SNCB-6ec4d080">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__error_handling">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -570,7 +571,7 @@ not return or return too late (e.g. caused by blocked or delayed execution of th
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-65b285a3">
+<div class="need_container docutils container" id="SNCB-aaed2a00">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__instance_separation">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -606,6 +607,144 @@ shall not be modified by other software elements.</p>
 </tr>
 <tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
 <div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__instance_separation" title="aou_req__persistency__instance_separation">aou_req__persistency__instance_separation</a></span></span></div>
+</div>
+</td>
+<td class="footer" colspan="2"><div class="needs_footer line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Assumption of Use Requirement</span></span></span></div>
+</div>
+</td>
+<td class="footer_right" colspan="2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="need_container docutils container" id="SNCB-2c12c6b8">
+<div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__start_without_data">
+<tbody>
+<tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
+<div class="line"><span><span class="needs_title"><span class="needs_data">Start without Persisted Data</span></span></span></div>
+</div>
+</td>
+<td class="head_center" colspan="2"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">valid</span></span></span></div>
+<div class="line"><span><span class="needs_security"><span class="needs_label">security: </span><span class="needs_data">NO</span></span></span></div>
+<div class="line"><span><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">ASIL_B</span></span></span></div>
+</div>
+</td>
+<td class="head_right" colspan="2"><div class="needs_head_right line-block">
+<div class="line"><span><span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span></span></div>
+</div>
+</td>
+</tr>
+<tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
+<div class="line"><span><span><div class="line"><span class="needs_tags"><span class="needs_label">tags: </span><span class="needs_data_container"><span class="needs_data">persistency</span></span></span></div>
+<div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
+</span></span></div>
+<div class="line"><span><div class="line">mitigates: <span class="mitigated_by"><span><a class="reference internal" href="../../../components/kvs/safety_analysis/fmea.html#comp_saf_fmea__kvs__empty_storage_used" title="aou_req__persistency__start_without_data">comp_saf_fmea__kvs__empty_storage_used</a>, <a class="reference internal" href="fmea.html#feat_saf_fmea__persistency__wrong_data" title="aou_req__persistency__start_without_data">feat_saf_fmea__persistency__wrong_data</a></span></span></div>
+</span></div>
+</div>
+</td>
+<td class="meta" colspan="3"></td>
+</tr>
+<tr class="content row-odd"><td class="content" colspan="6"><p>The application shall either require existing persisted data when opening a KVS instance, or handle that the
+KVS instance provides only default values because no persisted data is available.</p></td>
+</tr>
+<tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
+<div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__start_without_data" title="aou_req__persistency__start_without_data">aou_req__persistency__start_without_data</a></span></span></div>
+</div>
+</td>
+<td class="footer" colspan="2"><div class="needs_footer line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Assumption of Use Requirement</span></span></span></div>
+</div>
+</td>
+<td class="footer_right" colspan="2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="need_container docutils container" id="SNCB-9691e025">
+<div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__flush">
+<tbody>
+<tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
+<div class="line"><span><span class="needs_title"><span class="needs_data">Flush of Safety Relevant Changes</span></span></span></div>
+</div>
+</td>
+<td class="head_center" colspan="2"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">valid</span></span></span></div>
+<div class="line"><span><span class="needs_security"><span class="needs_label">security: </span><span class="needs_data">NO</span></span></span></div>
+<div class="line"><span><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">ASIL_B</span></span></span></div>
+</div>
+</td>
+<td class="head_right" colspan="2"><div class="needs_head_right line-block">
+<div class="line"><span><span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span></span></div>
+</div>
+</td>
+</tr>
+<tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
+<div class="line"><span><span><div class="line"><span class="needs_tags"><span class="needs_label">tags: </span><span class="needs_data_container"><span class="needs_data">persistency</span></span></span></div>
+<div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
+</span></span></div>
+<div class="line"><span><div class="line">mitigates: <span class="mitigated_by"><span><a class="reference internal" href="../../../components/kvs/safety_analysis/fmea.html#comp_saf_fmea__kvs__unflushed_lost" title="aou_req__persistency__flush">comp_saf_fmea__kvs__unflushed_lost</a>, <a class="reference internal" href="fmea.html#feat_saf_fmea__persistency__err_handl" title="aou_req__persistency__flush">feat_saf_fmea__persistency__err_handl</a></span></span></div>
+</span></div>
+</div>
+</td>
+<td class="meta" colspan="3"></td>
+</tr>
+<tr class="content row-odd"><td class="content" colspan="6"><p>The application shall flush changes which shall survive a reset and shall consider changes as persisted only
+after the flush has returned without error.</p></td>
+</tr>
+<tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
+<div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__flush" title="aou_req__persistency__flush">aou_req__persistency__flush</a></span></span></div>
+</div>
+</td>
+<td class="footer" colspan="2"><div class="needs_footer line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Assumption of Use Requirement</span></span></span></div>
+</div>
+</td>
+<td class="footer_right" colspan="2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="need_container docutils container" id="SNCB-58269300">
+<div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__callback">
+<tbody>
+<tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
+<div class="line"><span><span class="needs_title"><span class="needs_data">Completion Callback Restrictions</span></span></span></div>
+</div>
+</td>
+<td class="head_center" colspan="2"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">valid</span></span></span></div>
+<div class="line"><span><span class="needs_security"><span class="needs_label">security: </span><span class="needs_data">NO</span></span></span></div>
+<div class="line"><span><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">ASIL_B</span></span></span></div>
+</div>
+</td>
+<td class="head_right" colspan="2"><div class="needs_head_right line-block">
+<div class="line"><span><span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span></span></div>
+</div>
+</td>
+</tr>
+<tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
+<div class="line"><span><span><div class="line"><span class="needs_tags"><span class="needs_label">tags: </span><span class="needs_data_container"><span class="needs_data">persistency</span></span></span></div>
+<div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
+</span></span></div>
+<div class="line"><span><div class="line">mitigates: <span class="mitigated_by"><span><a class="reference internal" href="../../../components/kvs/safety_analysis/dfa.html#comp_saf_dfa__kvs__callback_deadlock" title="aou_req__persistency__callback">comp_saf_dfa__kvs__callback_deadlock</a>, <a class="reference internal" href="dfa.html#feat_saf_dfa__persistency__callback_deadlock" title="aou_req__persistency__callback">feat_saf_dfa__persistency__callback_deadlock</a></span></span></div>
+</span></div>
+</div>
+</td>
+<td class="meta" colspan="3"></td>
+</tr>
+<tr class="content row-odd"><td class="content" colspan="6"><p>The application code executed on a completion signal of the persistency shall not call the KVS instance which
+issued the signal and shall not wait for resources held by the caller of the persistency.</p></td>
+</tr>
+<tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
+<div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__callback" title="aou_req__persistency__callback">aou_req__persistency__callback</a></span></span></div>
 </div>
 </td>
 <td class="footer" colspan="2"><div class="needs_footer line-block">
