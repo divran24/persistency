@@ -491,7 +491,7 @@
                   
   <section id="security-manual">
 <h1>Security Manual<a class="headerlink" href="#security-manual" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-b3f72b2d">
+<div class="need_container docutils container" id="SNCB-9511efbf">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__persistency_security_manual">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -628,7 +628,7 @@
 <h2>Assumptions of Use<a class="headerlink" href="#assumptions-of-use" title="Link to this heading">#</a></h2>
 <section id="aou-requirements">
 <h3>AoU Requirements<a class="headerlink" href="#aou-requirements" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-1b600585">
+<div class="need_container docutils container" id="SNCB-fde222da">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__storage_access_rights">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -658,8 +658,7 @@
 </tr>
 <tr class="content row-odd"><td class="content" colspan="6"><p>The system integrator shall configure the OS users and groups of the applications and the access rights of the
 KVS working directories such that only the application owning a KVS instance (and, where required, the members of
-its group) can read or write the storage files, snapshot files, hash files and default-values files of this
-KVS instance.</p></td>
+its group) can read or write the storage files, snapshot files and default-values files of this KVS instance.</p></td>
 </tr>
 <tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
 <div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__storage_access_rights" title="aou_req__persistency__storage_access_rights">aou_req__persistency__storage_access_rights</a></span></span></div>
@@ -675,7 +674,7 @@ KVS instance.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-600ac515">
+<div class="need_container docutils container" id="SNCB-25ff8cb0">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__defaults_read_only">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -703,8 +702,8 @@ KVS instance.</p></td>
 </td>
 <td class="meta" colspan="3"></td>
 </tr>
-<tr class="content row-odd"><td class="content" colspan="6"><p>The system integrator shall deploy the default-values files and their hash files read-only for the applications,
-so that the default values can not be modified at runtime.</p></td>
+<tr class="content row-odd"><td class="content" colspan="6"><p>The system integrator shall deploy the default-values files read-only for the applications, so that the default
+values can not be modified at runtime.</p></td>
 </tr>
 <tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
 <div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__defaults_read_only" title="aou_req__persistency__defaults_read_only">aou_req__persistency__defaults_read_only</a></span></span></div>
@@ -720,7 +719,7 @@ so that the default values can not be modified at runtime.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-66b9d4b8">
+<div class="need_container docutils container" id="SNCB-b9b2fd60">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__confidentiality">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -766,52 +765,7 @@ pairs unencrypted.</p></td>
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-cf987deb">
-<div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__tool_deployment">
-<tbody>
-<tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
-<div class="line"><span><span class="needs_title"><span class="needs_data">KVS Tool not in Production</span></span></span></div>
-</div>
-</td>
-<td class="head_center" colspan="2"><div class="needs_head line-block">
-<div class="line"><span><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">valid</span></span></span></div>
-<div class="line"><span><span class="needs_security"><span class="needs_label">security: </span><span class="needs_data">YES</span></span></span></div>
-<div class="line"><span><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">QM</span></span></span></div>
-</div>
-</td>
-<td class="head_right" colspan="2"><div class="needs_head_right line-block">
-<div class="line"><span><span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span></span></div>
-</div>
-</td>
-</tr>
-<tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
-<div class="line"><span><span><div class="line"><span class="needs_tags"><span class="needs_label">tags: </span><span class="needs_data_container"><span class="needs_data">persistency</span><span class="needs_spacer">, </span><span class="needs_data">environment</span></span></span></div>
-<div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Non-Functional</span></span></div>
-<div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
-</span></span></div>
-<div class="line"><span></span></div>
-</div>
-</td>
-<td class="meta" colspan="3"></td>
-</tr>
-<tr class="content row-odd"><td class="content" colspan="6"><p>The system integrator shall not deploy the KVS tool (<code class="docutils literal notranslate"><span class="pre">//score/kvs/rust_kvs_tool:kvs_tool</span></code>) in production
-software images, as it can read and modify every KVS storage accessible to the OS user running it.</p></td>
-</tr>
-<tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
-<div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__tool_deployment" title="aou_req__persistency__tool_deployment">aou_req__persistency__tool_deployment</a></span></span></div>
-</div>
-</td>
-<td class="footer" colspan="2"><div class="needs_footer line-block">
-<div class="line"><span><span class="needs_type_name"><span class="needs_data">Assumption of Use Requirement</span></span></span></div>
-</div>
-</td>
-<td class="footer_right" colspan="2"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="need_container docutils container" id="SNCB-88e3b096">
+<div class="need_container docutils container" id="SNCB-6811abbc">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__manipulation_protection">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -889,15 +843,11 @@ Also the HW related failures are taken into account by the system integrator, if
 <td class="needs_id"><p><a class="reference internal" href="#aou_req__persistency__confidentiality">aou_req__persistency__confidentiality</a></p></td>
 <td class="needs_status"><p>valid</p></td>
 </tr>
-<tr class="need row-odd"><td class="needs_title"><p>KVS Tool not in Production</p></td>
-<td class="needs_id"><p><a class="reference internal" href="#aou_req__persistency__tool_deployment">aou_req__persistency__tool_deployment</a></p></td>
-<td class="needs_status"><p>valid</p></td>
-</tr>
-<tr class="need row-even"><td class="needs_title"><p>Read-only Default Values</p></td>
+<tr class="need row-odd"><td class="needs_title"><p>Read-only Default Values</p></td>
 <td class="needs_id"><p><a class="reference internal" href="#aou_req__persistency__defaults_read_only">aou_req__persistency__defaults_read_only</a></p></td>
 <td class="needs_status"><p>valid</p></td>
 </tr>
-<tr class="need row-odd"><td class="needs_title"><p>Storage Access Rights</p></td>
+<tr class="need row-even"><td class="needs_title"><p>Storage Access Rights</p></td>
 <td class="needs_id"><p><a class="reference internal" href="#aou_req__persistency__storage_access_rights">aou_req__persistency__storage_access_rights</a></p></td>
 <td class="needs_status"><p>valid</p></td>
 </tr>
@@ -948,14 +898,14 @@ For the feature Persistency the platform security manual and this module securit
 <div class="line-block">
 <div class="line">Persistency is a library which is executed in the process and with the OS user of the calling application. It has no own
 process, no inter-process communication and no network interface. Its attack surface consists of its API, used by
-the application, and of the files it stores in and loads from the file system (storage, snapshot, hash and
+the application, and of the files it stores in and loads from the file system (storage, snapshot and
 default-values files, see <a class="reference internal" href="../../features/persistency/architecture/index.html#doc__persistency_kvs_architecture" title="doc__persistency_kvs_architecture"><em class="xref need">Persistency KVS Feature Arc... (doc__persistency_kvs_architecture)</em></a>).</div>
 <div class="line">Access control: the component does not implement own access controls, but relies on the access rights of the file
 system (<a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__permission_control" title="comp_req__kvs__permission_control"><em class="xref need">Permission Control (comp_req__kvs__permission_control)</em></a>). Access and permission errors of the file system are reported to the
 application (<a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__permission_err_hndl" title="comp_req__kvs__permission_err_hndl"><em class="xref need">Permission Error Handling (comp_req__kvs__permission_err_hndl)</em></a>). The separation of the data stores of different applications
 (<a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/persistency/requirements/index.html#feat_req__persistency__access_control">feat_req__persistency__access_control</a>) is therefore achieved by the system integrator
 (<a class="reference internal" href="#aou_req__persistency__storage_access_rights" title="aou_req__persistency__storage_access_rights"><em class="xref need">Storage Access Rights (aou_req__persistency__storage_access_rights)</em></a>, <a class="reference internal" href="#aou_req__persistency__defaults_read_only" title="aou_req__persistency__defaults_read_only"><em class="xref need">Read-only Default Values (aou_req__persistency__defaults_read_only)</em></a>).</div>
-<div class="line">Integrity: when a storage file is loaded, its Adler-32 checksum is compared with the stored hash file. Corrupted
+<div class="line">Integrity: when a storage file is loaded, its Adler-32 checksum is compared with the stored checksum. Corrupted
 or interrupted storage is detected, reported and not loaded (<a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__corruption_detect_open" title="comp_req__kvs__corruption_detect_open"><em class="xref need">Corruption Detection on Open (comp_req__kvs__corruption_detect_open)</em></a>,
 <a class="reference internal" href="../../components/kvs/requirements/index.html#comp_req__kvs__open_need_kvs_behavior" title="comp_req__kvs__open_need_kvs_behavior"><em class="xref need">Open Behavior on Missing or... (comp_req__kvs__open_need_kvs_behavior)</em></a>). Adler-32 is not a cryptographic checksum, i.e. it detects accidental
 corruption, but not intentional manipulation by an attacker with write access to the storage
@@ -968,8 +918,10 @@ by the JSON parser and reported as error.</div>
 <div class="line">Confidentiality: the component stores the key-value pairs unencrypted. The confidential storage
 (<a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/persistency/requirements/index.html#feat_req__persistency__confidential_storage">feat_req__persistency__confidential_storage</a>) is not realized by the component, it has to be provided by the
 storage environment (<a class="reference internal" href="#aou_req__persistency__confidentiality" title="aou_req__persistency__confidentiality"><em class="xref need">Confidentiality of Persiste... (aou_req__persistency__confidentiality)</em></a>).</div>
-<div class="line">Tooling: the KVS tool reads and modifies KVS storage for development and test purposes and is not part of the
-product (<a class="reference internal" href="#aou_req__persistency__tool_deployment" title="aou_req__persistency__tool_deployment"><em class="xref need">KVS Tool not in Production (aou_req__persistency__tool_deployment)</em></a>).</div>
+<div class="line">Tooling: the KVS tool (<code class="docutils literal notranslate"><span class="pre">//score/kvs/rust_kvs_tool:kvs_tool</span></code>) reads and modifies KVS storage for development and
+test purposes. It has no special rights and can only access the KVS storage accessible to the OS user running it,
+which is restricted by <a class="reference internal" href="#aou_req__persistency__storage_access_rights" title="aou_req__persistency__storage_access_rights"><em class="xref need">Storage Access Rights (aou_req__persistency__storage_access_rights)</em></a>. It is recommended not to deploy the KVS
+tool in production software images, to keep the attack surface small.</div>
 <div class="line">The security analysis of the feature is documented in <a class="reference internal" href="../../features/persistency/security_analysis/stride.html#doc__persistency_stride" title="doc__persistency_stride"><em class="xref need">STRIDE (doc__persistency_stride)</em></a>.</div>
 </div>
 </section>
