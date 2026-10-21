@@ -78,8 +78,7 @@ AoU Requirements
 
    The system integrator shall configure the OS users and groups of the applications and the access rights of the
    KVS working directories such that only the application owning a KVS instance (and, where required, the members of
-   its group) can read or write the storage files, snapshot files, hash files and default-values files of this
-   KVS instance.
+   its group) can read or write the storage files, snapshot files and default-values files of this KVS instance.
 
 .. aou_req:: Read-only Default Values
    :id: aou_req__persistency__defaults_read_only
@@ -90,8 +89,8 @@ AoU Requirements
    :version: 1
    :tags: persistency, environment
 
-   The system integrator shall deploy the default-values files and their hash files read-only for the applications,
-   so that the default values can not be modified at runtime.
+   The system integrator shall deploy the default-values files read-only for the applications, so that the default
+   values can not be modified at runtime.
 
 .. aou_req:: Confidentiality of Persisted Data
    :id: aou_req__persistency__confidentiality
@@ -105,18 +104,6 @@ AoU Requirements
    The system integrator shall provide confidentiality of persisted data which requires it by the storage
    environment (an encrypted file system or an encrypted storage medium), as the component stores the key-value
    pairs unencrypted.
-
-.. aou_req:: KVS Tool not in Production
-   :id: aou_req__persistency__tool_deployment
-   :reqtype: Non-Functional
-   :security: YES
-   :safety: QM
-   :status: valid
-   :version: 1
-   :tags: persistency, environment
-
-   The system integrator shall not deploy the KVS tool (``//score/kvs/rust_kvs_tool:kvs_tool``) in production
-   software images, as it can read and modify every KVS storage accessible to the OS user running it.
 
 .. aou_req:: No Protection against Intentional Manipulation
    :id: aou_req__persistency__manipulation_protection
@@ -188,14 +175,14 @@ Security concept of the OoC
 ---------------------------
 | Persistency is a library which is executed in the process and with the OS user of the calling application. It has no own
   process, no inter-process communication and no network interface. Its attack surface consists of its API, used by
-  the application, and of the files it stores in and loads from the file system (storage, snapshot, hash and
+  the application, and of the files it stores in and loads from the file system (storage, snapshot and
   default-values files, see :need:`doc__persistency_kvs_architecture`).
 | Access control: the component does not implement own access controls, but relies on the access rights of the file
   system (:need:`comp_req__kvs__permission_control`). Access and permission errors of the file system are reported to the
   application (:need:`comp_req__kvs__permission_err_hndl`). The separation of the data stores of different applications
   (:need:`feat_req__persistency__access_control`) is therefore achieved by the system integrator
   (:need:`aou_req__persistency__storage_access_rights`, :need:`aou_req__persistency__defaults_read_only`).
-| Integrity: when a storage file is loaded, its Adler-32 checksum is compared with the stored hash file. Corrupted
+| Integrity: when a storage file is loaded, its Adler-32 checksum is compared with the stored checksum. Corrupted
   or interrupted storage is detected, reported and not loaded (:need:`comp_req__kvs__corruption_detect_open`,
   :need:`comp_req__kvs__open_need_kvs_behavior`). Adler-32 is not a cryptographic checksum, i.e. it detects accidental
   corruption, but not intentional manipulation by an attacker with write access to the storage
@@ -208,8 +195,10 @@ Security concept of the OoC
 | Confidentiality: the component stores the key-value pairs unencrypted. The confidential storage
   (:need:`feat_req__persistency__confidential_storage`) is not realized by the component, it has to be provided by the
   storage environment (:need:`aou_req__persistency__confidentiality`).
-| Tooling: the KVS tool reads and modifies KVS storage for development and test purposes and is not part of the
-  product (:need:`aou_req__persistency__tool_deployment`).
+| Tooling: the KVS tool (``//score/kvs/rust_kvs_tool:kvs_tool``) reads and modifies KVS storage for development and
+  test purposes. It has no special rights and can only access the KVS storage accessible to the OS user running it,
+  which is restricted by :need:`aou_req__persistency__storage_access_rights`. It is recommended not to deploy the KVS
+  tool in production software images, to keep the attack surface small.
 | The security analysis of the feature is documented in :need:`doc__persistency_stride`.
 
 .. _persistency_sbom:
