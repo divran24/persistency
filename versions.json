@@ -40,22 +40,6 @@
     "url": "https://eclipse-score.github.io/persistency/pr-500/"
   },
   {
-    "version": "pr-503",
-    "url": "https://eclipse-score.github.io/persistency/pr-503/"
-  },
-  {
-    "version": "pr-525",
-    "url": "https://eclipse-score.github.io/persistency/pr-525/"
-  },
-  {
-    "version": "pr-529",
-    "url": "https://eclipse-score.github.io/persistency/pr-529/"
-  },
-  {
-    "version": "pr-531",
-    "url": "https://eclipse-score.github.io/persistency/pr-531/"
-  },
-  {
     "version": "pr-534",
     "url": "https://eclipse-score.github.io/persistency/pr-534/"
   },
@@ -96,24 +80,8 @@
     "url": "https://eclipse-score.github.io/persistency/pr-546/"
   },
   {
-    "version": "v0.3.0",
-    "url": "https://eclipse-score.github.io/persistency/v0.3.0/"
-  },
-  {
-    "version": "v0.3.1",
-    "url": "https://eclipse-score.github.io/persistency/v0.3.1/"
-  },
-  {
-    "version": "v0.3.2",
-    "url": "https://eclipse-score.github.io/persistency/v0.3.2/"
-  },
-  {
-    "version": "pr-548",
-    "url": "https://eclipse-score.github.io/persistency/pr-548/"
-  },
-  {
-    "version": "pr-549",
-    "url": "https://eclipse-score.github.io/persistency/pr-549/"
+    "version": "pr-547",
+    "url": "https://eclipse-score.github.io/persistency/pr-547/"
   },
   {
     "version": "pr-550",
@@ -144,19 +112,19 @@
     "url": "https://eclipse-score.github.io/persistency/pr-557/"
   },
   {
-    "version": "pr-558",
-    "url": "https://eclipse-score.github.io/persistency/pr-558/"
-  },
-  {
-    "version": "pr-547",
-    "url": "https://eclipse-score.github.io/persistency/pr-547/"
-  },
-  {
     "version": "pr-559",
     "url": "https://eclipse-score.github.io/persistency/pr-559/"
   },
   {
-    "version": "pr-560",
-    "url": "https://eclipse-score.github.io/persistency/pr-560/"
+    "version": "v0.3.0",
+    "url": "https://eclipse-score.github.io/persistency/v0.3.0/"
+  },
+  {
+    "version": "v0.3.1",
+    "url": "https://eclipse-score.github.io/persistency/v0.3.1/"
+  },
+  {
+    "version": "v0.3.2",
+    "url": "https://eclipse-score.github.io/persistency/v0.3.2/"
   }
 ]
