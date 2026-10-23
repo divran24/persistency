@@ -162,5 +162,9 @@
   {
     "version": "pr-579",
     "url": "https://eclipse-score.github.io/persistency/pr-579/"
+  },
+  {
+    "version": "pr-582",
+    "url": "https://eclipse-score.github.io/persistency/pr-582/"
   }
 ]
