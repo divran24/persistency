@@ -142,5 +142,9 @@
   {
     "version": "pr-576",
     "url": "https://eclipse-score.github.io/persistency/pr-576/"
+  },
+  {
+    "version": "pr-577",
+    "url": "https://eclipse-score.github.io/persistency/pr-577/"
   }
 ]
