@@ -50,15 +50,12 @@ See also :need:`doc_concept__wp_inspections` for further information about revie
 
         * - 1
           - Is the rationale for the safety work products tailoring included?
-          - YES
-          - :need:`[[title]] <std_req__iso26262__management_6451>`
-            :need:`[[title]] <std_req__iso26262__management_6455>`
-            :need:`[[title]] <std_req__iso26262__management_6457>`
-            :need:`[[title]] <std_req__iso26262__management_6467>`
-          - The module and the feature add no further exclusions to the tailoring of the :need:`wp__platform_safety_plan`
-            ("none" in the module plan, "no tailoring" in :need:`doc__persistency_safety_wp`).
-            The notes on the execution give the rationale why the component FMEA/DFA refer to the feature analyses
-            (KVS has no internal components) and where the detailed design is captured (source code and :need:`doc__kvs_detailed_design`).
+          - N/A
+          - :need:`[[title]] <std_req__iso26262__management_6452>`
+          - This is the first formal release of the module, so no impact analysis of re-used SW is needed.
+            For following releases the component and feature modification requests affecting the SW release
+            will be linked here (safety planning based on impact analysis as defined in the tailoring of the
+            :need:`wp__platform_safety_plan`).
 
         * - 2
           - Is impact analysis planned in case of re-use of SW (needed for every release following the first formal release)?
@@ -74,10 +71,10 @@ See also :need:`doc_concept__wp_inspections` for further information about revie
           - :need:`[[title]] <std_req__iso26262__management_6465>`
             :need:`[[title]] <std_req__iso26262__management_6491>`
             :need:`[[title]] <std_req__iso26262__management_64111>`
-          - Planned are the formal document reviews of the safety plan, the safety package and the safety analyses
-            (:need:`wp__fdr_reports`), the safety manual, the module verification report and the release note.
-            The safety audit (:need:`wp__audit_report`) is not performed within S-CORE ("n/a" in the work product list);
-            the module prepares the work products, the audit is commissioned by the integrator or user if needed.
+          - Planned are the formal document reviews (:need:`wp__fdr_reports`) of the module safety plan,
+            the module safety package and the module's safety analyses and DFA.
+            The safety audit (:need:`wp__audit_report`) is planned on platform level in the :need:`wp__platform_safety_plan`
+            (performed by external experts); the module safety plan refers to the next S-CORE safety audit.
 
         * - 4
           - Does the safety plan define all needed activities for System and SW development, integration and verification?
@@ -110,9 +107,10 @@ See also :need:`doc_concept__wp_inspections` for further information about revie
           - Does the safety plan document a responsible for all activities?
           - YES
           - :need:`[[title]] <std_req__iso26262__management_6463>`
-          - Safety Manager and Module Project Manager are named in the module roles. The work products are
-            guarded by the CODEOWNERS whose skills are checked in :need:`doc__persistency_codeowners`; the responsibility
-            of the process roles per work product is defined in the processes as stated in the :need:`wp__platform_safety_plan`.
+          - Safety Manager and Module Project Manager are named in the module roles. For each work product the
+            :need:`doc__persistency_safety_plan` states the link to the process (column "Link to process"), which
+            defines the responsible role. The role holders are the CODEOWNERS, whose skills are checked in
+            :need:`doc__persistency_codeowners`.
 
         * - 8
           - If OSS software components is used, is it planned to be qualified?
