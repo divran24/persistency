@@ -49,7 +49,6 @@ jobs:
               -//score/kvs/rust_kvs_tool:kvs_tool
               -//score/kvs/rust_kvs/tests/test_scenarios:test_scenarios
               -//score/kvs/tests/test_scenarios/rust:test_scenarios
-              -//score/kvs/tests/integration_test_scenarios:stage_kvs_tool
               -//score/kvs/rust_kvs/tests:cit_tests
               -//score/kvs/tests/test_cases:cit
             bazel-test-target: "//score/..."
