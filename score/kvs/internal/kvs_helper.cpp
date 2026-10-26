@@ -10,23 +10,23 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+
 #include "kvs_helper.hpp"
 
 namespace score::mw::per::kvs
 {
 
-/*********************** Hash Functions *********************/
-/*Adler 32 checksum algorithm*/
-// Optimized version: processes data in blocks to reduce modulo operations
+// Optimized version: processes data in blocks to reduce modulo operations.
 uint32_t calculate_hash_adler32(const std::string& data) noexcept
 {
     constexpr size_t ADLER32_NMAX = 5552;
     constexpr uint32_t ADLER32_BASE = 65521;
-    uint32_t a = 1, b = 0;
+    uint32_t a = 1;
+    uint32_t b = 0;
     size_t len = data.size();
     size_t i = 0;
 
-    // Process in blocks of 5552 bytes (as recommended for Adler-32)
+    // Process in blocks of 5552 bytes (as recommended for Adler-32).
     while (len > 0)
     {
         size_t tlen = len > ADLER32_NMAX ? ADLER32_NMAX : len;
@@ -42,31 +42,25 @@ uint32_t calculate_hash_adler32(const std::string& data) noexcept
     return (b << 16) | a;
 }
 
-/*Parse Adler32 checksum Byte-Array to uint32 */
 uint32_t parse_hash_adler32(std::istream& in) noexcept
 {
     std::array<uint8_t, 4> buf{};
     in.read(reinterpret_cast<char*>(buf.data()), buf.size());
 
-    uint32_t value = (uint32_t(buf[0]) << 24) | (uint32_t(buf[1]) << 16) | (uint32_t(buf[2]) << 8) | uint32_t(buf[3]);
+    uint32_t value = (static_cast<uint32_t>(buf[0]) << 24) | (static_cast<uint32_t>(buf[1]) << 16) |
+                     (static_cast<uint32_t>(buf[2]) << 8) | static_cast<uint32_t>(buf[3]);
     return value;
 }
 
-/* Split uint32 checksum in bytes for writing*/
 std::array<uint8_t, 4> get_hash_bytes_adler32(uint32_t hash) noexcept
 {
-    std::array<uint8_t, 4> value = {uint8_t((hash >> 24) & 0xFF),
-                                    uint8_t((hash >> 16) & 0xFF),
-                                    uint8_t((hash >> 8) & 0xFF),
-                                    uint8_t((hash) & 0xFF)};
+    std::array<uint8_t, 4> value = {static_cast<uint8_t>((hash >> 24) & 0xFF),
+                                    static_cast<uint8_t>((hash >> 16) & 0xFF),
+                                    static_cast<uint8_t>((hash >> 8) & 0xFF),
+                                    static_cast<uint8_t>((hash) & 0xFF)};
     return value;
 }
 
-/***** Wrapper Functions for Hash *****/
-/* Wrapper Functions should isolate the Hash Algorithm, so that the algorithm can be easier
- * replaced*/
-
-/* Wrapper Function to get checksum in bytes*/
 std::array<uint8_t, 4> get_hash_bytes(const std::string& data) noexcept
 {
     uint32_t hash = calculate_hash_adler32(data);
@@ -74,7 +68,6 @@ std::array<uint8_t, 4> get_hash_bytes(const std::string& data) noexcept
     return value;
 }
 
-/* Wrapper Function to check, if Hash is valid*/
 bool check_hash(const std::string& data_calculate, std::istream& data_parse) noexcept
 {
     uint32_t calculated_hash = calculate_hash_adler32(data_calculate);
@@ -82,9 +75,6 @@ bool check_hash(const std::string& data_calculate, std::istream& data_parse) noe
     return calculated_hash == parsed_hash;
 }
 
-/*********************** Standalone Helper Functions *********************/
-
-/* Helper Function for Any -> KVSValue conversion */
 score::Result<KvsValue> any_to_kvsvalue(const score::json::Any& any) noexcept
 {
     auto o = any.As<score::json::Object>();
@@ -225,7 +215,6 @@ score::Result<KvsValue> any_to_kvsvalue(const score::json::Any& any) noexcept
     }
 }
 
-/* Helper Function for KVSValue -> Any conversion */
 score::Result<score::json::Any> kvsvalue_to_any(const KvsValue& kv) noexcept
 {
     score::json::Object obj;
@@ -320,4 +309,4 @@ score::Result<score::json::Any> kvsvalue_to_any(const KvsValue& kv) noexcept
     return score::json::Any(std::move(obj));
 }
 
-} /* namespace score::mw::per::kvs */
+}  // namespace score::mw::per::kvs

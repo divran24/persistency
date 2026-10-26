@@ -10,6 +10,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+
 #include "test_basic.hpp"
 
 #include "score/kvs/kvs.hpp"
@@ -51,7 +52,6 @@ void BasicScenario::run(const std::string& input) const
     {
         builder = builder.need_kvs_flag(*params.need_kvs);
     }
-    // TODO: handle dir?
 
     // Create KVS.
     Kvs kvs{*builder.build()};
@@ -77,7 +77,7 @@ void BasicScenario::run(const std::string& input) const
     }
 
     auto stored_value{std::get<std::string>(stored_kvs_value.getValue())};
-    if (stored_value.compare(value) != 0)
+    if (stored_value != value)
     {
         throw std::runtime_error("Value mismatch");
     }

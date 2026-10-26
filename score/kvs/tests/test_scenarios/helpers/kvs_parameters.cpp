@@ -18,23 +18,25 @@ using namespace score::json;
 namespace
 {
 
-/// Deserialize load parameter: "defaults" or "kvs_load".
+/// @brief Deserializes a load parameter: "defaults" or "kvs_load".
 template <typename T,
-          typename std::enable_if_t<std::is_same_v<T, score::mw::per::kvs::OpenNeedDefaults> || std::is_same_v<T, score::mw::per::kvs::OpenNeedKvs>, bool> = true>
+          typename std::enable_if_t<std::is_same_v<T, score::mw::per::kvs::OpenNeedDefaults> ||
+                                        std::is_same_v<T, score::mw::per::kvs::OpenNeedKvs>,
+                                    bool> = true>
 std::optional<T> deserialize_load_param(const score::json::Object& obj_root, const std::string& field_name)
 {
     if (obj_root.find(field_name) != obj_root.end())
     {
         auto value_str{obj_root.at(field_name).As<std::string>().value().get()};
-        if (value_str.compare("ignored") == 0)
+        if (value_str == "ignored")
         {
             return T::Ignored;
         }
-        else if (value_str.compare("optional") == 0)
+        else if (value_str == "optional")
         {
             return T::Optional;
         }
-        else if (value_str.compare("required") == 0)
+        else if (value_str == "required")
         {
             return T::Required;
         }
@@ -51,12 +53,12 @@ std::optional<T> deserialize_load_param(const score::json::Object& obj_root, con
 
 KvsParameters KvsParameters::from_json(const std::string& json_str)
 {
-    // Load and parse provided JSON stirng.
+    // Load and parse provided JSON string.
     JsonParser parser;
     auto any_res{parser.FromBuffer(json_str)};
     if (!any_res)
     {
-        throw any_res.error();
+        throw score::result::Error(any_res.error());
     }
 
     return KvsParameters::from_object(any_res.value().As<Object>().value().get());
