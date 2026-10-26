@@ -222,44 +222,79 @@ score::Result<score::json::Any> kvsvalue_to_any(const KvsValue& kv) noexcept
     {
         case KvsValue::Type::i32:
         {
+            const auto* value = std::get_if<int32_t>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("i32")));
-            obj.emplace("v", score::json::Any(static_cast<int32_t>(std::get<int32_t>(kv.getValue()))));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::u32:
         {
+            const auto* value = std::get_if<uint32_t>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("u32")));
-            obj.emplace("v", score::json::Any(static_cast<uint32_t>(std::get<uint32_t>(kv.getValue()))));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::i64:
         {
+            const auto* value = std::get_if<int64_t>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("i64")));
-            obj.emplace("v", score::json::Any(static_cast<int64_t>(std::get<int64_t>(kv.getValue()))));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::u64:
         {
+            const auto* value = std::get_if<uint64_t>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("u64")));
-            obj.emplace("v", score::json::Any(static_cast<uint64_t>(std::get<uint64_t>(kv.getValue()))));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::f64:
         {
+            const auto* value = std::get_if<double>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("f64")));
-            obj.emplace("v", score::json::Any(std::get<double>(kv.getValue())));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::Boolean:
         {
+            const auto* value = std::get_if<bool>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("bool")));
-            obj.emplace("v", score::json::Any(std::get<bool>(kv.getValue())));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::String:
         {
+            const auto* value = std::get_if<std::string>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("str")));
-            obj.emplace("v", score::json::Any(std::get<std::string>(kv.getValue())));
+            obj.emplace("v", score::json::Any(*value));
             break;
         }
         case KvsValue::Type::Null:
@@ -270,9 +305,14 @@ score::Result<score::json::Any> kvsvalue_to_any(const KvsValue& kv) noexcept
         }
         case KvsValue::Type::Array:
         {
+            const auto* value = std::get_if<KvsValue::Array>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("arr")));
             score::json::List list;
-            for (const auto& elem : std::get<KvsValue::Array>(kv.getValue()))
+            for (const auto& elem : *value)
             {
                 auto conv = kvsvalue_to_any(elem);
                 if (!conv)
@@ -286,11 +326,16 @@ score::Result<score::json::Any> kvsvalue_to_any(const KvsValue& kv) noexcept
         }
         case KvsValue::Type::Object:
         {
+            const auto* value = std::get_if<KvsValue::Object>(&kv.getValue());
+            if (value == nullptr)
+            {
+                return score::MakeUnexpected(ErrorCode::InvalidValueType);
+            }
             obj.emplace("t", score::json::Any(std::string("obj")));
             score::json::Object inner_obj;
-            for (const auto& [key, value] : std::get<KvsValue::Object>(kv.getValue()))
+            for (const auto& [key, object_value] : *value)
             {
-                auto conv = kvsvalue_to_any(value);
+                auto conv = kvsvalue_to_any(object_value);
                 if (!conv)
                 {
                     return score::MakeUnexpected(ErrorCode::InvalidValueType);
