@@ -10,8 +10,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-#pragma once
+#ifndef SCORE_KVS_TESTS_TEST_SCENARIOS_CIT_DEFAULT_VALUES_H
+#define SCORE_KVS_TESTS_TEST_SCENARIOS_CIT_DEFAULT_VALUES_H
 
-#include "scenario.hpp"
+#include <scenario.hpp>
 
-ScenarioGroup::Ptr supported_datatypes_group();
+ScenarioGroup::Ptr DefaultValuesGroup();
+
+#endif  // SCORE_KVS_TESTS_TEST_SCENARIOS_CIT_DEFAULT_VALUES_H
